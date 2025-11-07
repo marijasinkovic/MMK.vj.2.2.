@@ -353,5 +353,11 @@
     <footer>
         <p>&copy; 2025 Marija Šinković | Grafički fakultet Zagreb</p>
     </footer>
+	<script>
+document.querySelector('.contact-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // sprječava "not allowed" grešku
+  alert('Hvala na poruci! 💌 Uskoro ću vam se javiti.');
+});
+</script>
 </body>
 </html>
