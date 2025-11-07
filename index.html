@@ -181,6 +181,64 @@
             border: 5px solid #E7993A;
             box-shadow: 0 0 15px rgba(99, 34, 35, 0.4);
         }
+
+        /* === DODANO: STIL ZA FORMU === */
+        .contact-form {
+            background-color: #FEBA52;
+            border: 3px solid #632223;
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 500px;
+            margin: 2rem auto;
+            box-shadow: 0 0 10px rgba(99, 34, 35, 0.3);
+        }
+
+        .contact-form fieldset {
+            border: 2px solid #923C27;
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .contact-form legend {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: #632223;
+            padding: 0 10px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #632223;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea,
+        .contact-form button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 8px;
+            border: 1px solid #8D2831;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .contact-form button {
+            background-color: #E7993A;
+            color: #632223;
+            border: none;
+            font-weight: bold;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #8D2831;
+            color: #FEBA52;
+        }
     </style>
 </head>
 
@@ -196,16 +254,8 @@
     </div>
 
     <section class="profil">
-        <!-- Slika Marije i Jaihel -->
         <img src="jaihel.JPG" alt="Marija i Jaihel">
         <p><em>Ovo je slika mene i moje najbolje prijateljice. 💕</em></p>
-		<head>
-<style>
-p {
-  line-height: 1.6;
-}
-</style>
-</head>
         <p>"Dizajn nije samo ono što vidiš – to je osjećaj koji prenosiš." 🎨</p>
     </section>
 
@@ -238,7 +288,7 @@ p {
     </section>
 
     <section class="artwork">
-        <h2>primjer mog digitalnog rada 🎨</h2>
+        <h2>Primjer mog digitalnog rada 🎨</h2>
         <img src="pr1.png" alt="Digitalni rad Marije Šinković">
     </section>
 
@@ -256,6 +306,44 @@ p {
         <p>📧 Email: <strong>marija.sinkovic16@gmail.com</strong></p>
         <p>📍 Zagreb, Hrvatska</p>
         <p>📱 Instagram: <em>@marija.sinkovic</em></p>
+
+        <form action="#" method="post" class="contact-form">
+            <fieldset>
+                <legend>Pošaljite mi poruku 💌</legend>
+
+                <label for="ime">Ime i prezime:</label>
+                <input type="text" id="ime" name="ime" placeholder="Unesite svoje ime" required>
+
+                <label for="email">E-mail adresa:</label>
+                <input type="email" id="email" name="email" placeholder="ime@email.com" required>
+
+                <label for="tema">Tema poruke:</label>
+                <select id="tema" name="tema">
+                    <option value="pohvala">Pohvala</option>
+                    <option value="pitanje">Pitanje</option>
+                    <option value="suradnja">Suradnja</option>
+                    <option value="ostalo">Ostalo</option>
+                </select>
+
+                <label for="boja">Omiljena boja (za zabavu):</label>
+                <input type="color" id="boja" name="boja" value="#FEBA52">
+
+                <label for="poruka">Vaša poruka:</label>
+                <textarea id="poruka" name="poruka" rows="5" placeholder="Napišite svoju poruku ovdje..."></textarea>
+
+                <label for="ocjena">Kako vam se sviđa stranica? (1–5)</label>
+                <input list="ocjene" id="ocjena" name="ocjena" placeholder="Odaberite broj">
+                <datalist id="ocjene">
+                    <option value="1">
+                    <option value="2">
+                    <option value="3">
+                    <option value="4">
+                    <option value="5">
+                </datalist>
+
+                <button type="submit">Pošalji ✉️</button>
+            </fieldset>
+        </form>
 
         <div class="faculty-logo">
             <img src="grflogo.png" alt="Logo Grafičkog fakulteta">
