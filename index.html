@@ -113,12 +113,6 @@
             padding: 2rem;
         }
 
-        .interests ol {
-            list-style: decimal-leading-zero;
-            display: inline-block;
-            text-align: left;
-        }
-
         .gallery {
             background-color: #E7993A;
             padding: 3rem 1rem;
@@ -135,39 +129,6 @@
             box-shadow: 0 0 10px rgba(99, 34, 35, 0.3);
         }
 
-        .quotes {
-            background-color: #8D2831;
-            color: #FEBA52;
-            text-align: center;
-            padding: 3rem 1rem;
-            font-style: italic;
-        }
-
-        .contact {
-            background-color: #E7993A;
-            padding: 3rem 1rem;
-            text-align: center;
-        }
-
-        .contact p {
-            color: #632223;
-        }
-
-        footer p {
-            margin: 0.5rem 0;
-            text-align: center;
-        }
-
-        .faculty-logo {
-            text-align: center;
-            margin-top: 2rem;
-        }
-
-        .faculty-logo img {
-            width: 150px;
-            height: auto;
-        }
-
         .artwork {
             background-color: #FEBA52;
             text-align: center;
@@ -182,7 +143,57 @@
             box-shadow: 0 0 15px rgba(99, 34, 35, 0.4);
         }
 
-        /* === DODANO: STIL ZA FORMU === */
+        /* --- LJEPŠA TABLICA S HOVER EFEKTIMA --- */
+        .table-section {
+            padding: 3rem 1rem;
+            background-color: #FEBA52;
+            text-align: center;
+        }
+
+        table {
+            width: 85%;
+            margin: 0 auto;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: linear-gradient(180deg, #FFE4B5, #FDD38F);
+            border: 4px solid #923C27;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(99, 34, 35, 0.3);
+            animation: fadeIn 0.8s ease;
+        }
+
+        th {
+            background-color: #E7993A;
+            color: #FEBA52;
+            padding: 15px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        td {
+            padding: 15px;
+            color: #632223;
+            font-size: 1rem;
+            border-bottom: 2px solid #F2BF7C;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: #F6C25B;
+            cursor: pointer;
+            transition: 0.25s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Kontakt forma */
         .contact-form {
             background-color: #FEBA52;
             border: 3px solid #632223;
@@ -239,6 +250,12 @@
             background-color: #8D2831;
             color: #FEBA52;
         }
+
+        .faculty-logo img {
+            width: 150px;
+            height: auto;
+            margin-top: 20px;
+        }
     </style>
 </head>
 
@@ -262,60 +279,84 @@
     <section>
         <p>
             Pozdrav! Ja sam Marija, društvena osoba koja voli kreativnost, ljude i prirodu. 
-            Studiram na Grafičkom fakultetu u Zagrebu i u slobodno vrijeme volontiram u struci kako bih 
-            stekla što više iskustva i upoznala nove ljude iz svijeta dizajna. 🌿
+            Studiram na Grafičkom fakultetu i volim istraživati sve oblike vizualne komunikacije. 🌿
         </p>
         <p>
-            Trenutno radim u Zara Home dućanu gdje razvijam osjećaj za estetiku, detalje i uređenje prostora. 
-            Volim aktivan odmor – planinarenje, vožnju biciklom, izlaske i druženja s prijateljima. 
-            I da, obožavam mačke! 🐾
-        </p>
-        <p>
-            Dizajn za mene znači slobodu izražavanja i stvaranje vizualnih priča koje prenose emocije. 
-            Kroz svaki projekt trudim se unijeti i malo svoje osobnosti. 💫:)
+            U slobodno vrijeme volontiram u struci, radim u Zara Home dućanu i učim nove dizajnerske alate. 
+            Volim planinarenje, vožnju biciklom, izlaske i druženja — a posebno mačke! 🐾
         </p>
     </section>
 
     <section class="skills">
         <h2>Moje vještine 💻</h2>
         <ul>
-            <li><strong>Grafički dizajn</strong> –> rad u Adobe Illustratoru i Photoshopu</li>
-            <li><strong>Tipografija</strong> –> eksperimentiranje s fontovima i stilovima pisma</li>
-            <li><strong>Fotografija</strong> + osnovna obrada </li>
-            <li><strong>HTML & CSS</strong> –> izrada jednostavnih web stranica</li>
-            <li><strong>Dizajn interijera</strong> + iskustvo rada u Zara Home</li>
+            <li><strong>Grafički dizajn</strong> – Adobe Illustrator & Photoshop</li>
+            <li><strong>Tipografija</strong> – kreativne kombinacije pisama</li>
+            <li><strong>Fotografija</strong> – + osnovna obrada</li>
+            <li><strong>HTML & CSS</strong> – izrada web stranica</li>
+            <li><strong>Dizajn interijera</strong> – iskustvo u Zara Home</li>
         </ul>
     </section>
 
     <section class="artwork">
-        <h2>Primjer mog digitalnog rada 🎨</h2>
-        <img src="pr1.png" alt="Digitalni rad Marije Šinković">
+        <h2>Moj digitalni rad 🎨</h2>
+        <img src="pr1.png" alt="Digitalni rad">
     </section>
 
     <section class="gallery">
         <h2>Galerija inspiracija 📷</h2>
         <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e" alt="Ulica noću">
         <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Priroda u magli">
-        <img src="https://images.unsplash.com/photo-1503264116251-35a269479413" alt="Sjene i refleksije">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Tiha šetnja">
-        <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0" alt="Grad u večernjem svjetlu">
+        <img src="https://images.unsplash.com/photo-1503264116251-35a269479413" alt="Refleksije">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Šetnja">
+        <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0" alt="Grad">
+    </section>
+
+    <!-- NOVA TABLICA -->
+    <section class="table-section">
+        <h2>Moji projekti 📊</h2>
+        <table>
+            <tr>
+                <th>Projekt</th>
+                <th>Godina</th>
+                <th>Vrsta rada</th>
+            </tr>
+
+            <tr>
+                <td>Digitalna ilustracija</td>
+                <td>2024.</td>
+                <td>Grafički dizajn</td>
+            </tr>
+
+            <tr>
+                <td>Vektorska tipografija</td>
+                <td>2025.</td>
+                <td>Tipografski rad</td>
+            </tr>
+
+            <tr>
+                <td>LUMINA SKIN video sadržaj</td>
+                <td>2025.</td>
+                <td>Multimedija</td>
+            </tr>
+        </table>
     </section>
 
     <section class="contact">
         <h2>Kontakt 📬</h2>
         <p>📧 Email: <strong>marija.sinkovic16@gmail.com</strong></p>
-        <p>📍 Zagreb, Hrvatska</p>
         <p>📱 Instagram: <em>@marija.sinkovic</em></p>
+        <p>📍 Zagreb, Hrvatska</p>
 
         <form action="#" method="post" class="contact-form">
             <fieldset>
                 <legend>Pošaljite mi poruku 💌</legend>
 
                 <label for="ime">Ime i prezime:</label>
-                <input type="text" id="ime" name="ime" placeholder="Unesite svoje ime" required>
+                <input type="text" id="ime" name="ime" required>
 
                 <label for="email">E-mail adresa:</label>
-                <input type="email" id="email" name="email" placeholder="ime@email.com" required>
+                <input type="email" id="email" name="email" required>
 
                 <label for="tema">Tema poruke:</label>
                 <select id="tema" name="tema">
@@ -325,21 +366,8 @@
                     <option value="ostalo">Ostalo</option>
                 </select>
 
-                <label for="boja">Omiljena boja (za zabavu):</label>
-                <input type="color" id="boja" name="boja" value="#FEBA52">
-
                 <label for="poruka">Vaša poruka:</label>
-                <textarea id="poruka" name="poruka" rows="5" placeholder="Napišite svoju poruku ovdje..."></textarea>
-
-                <label for="ocjena">Kako vam se sviđa stranica? (1–5)</label>
-                <input list="ocjene" id="ocjena" name="ocjena" placeholder="Odaberite broj">
-                <datalist id="ocjene">
-                    <option value="1">
-                    <option value="2">
-                    <option value="3">
-                    <option value="4">
-                    <option value="5">
-                </datalist>
+                <textarea id="poruka" name="poruka" rows="5"></textarea>
 
                 <button type="submit">Pošalji ✉️</button>
             </fieldset>
@@ -352,12 +380,14 @@
 
     <footer>
         <p>&copy; 2025 Marija Šinković | Grafički fakultet Zagreb</p>
+        <p>Hvala što ste posjetili moju web stranicu! 💛</p>
     </footer>
-	<script>
-document.querySelector('.contact-form').addEventListener('submit', function(event) {
-  event.preventDefault(); // sprječava "not allowed" grešku
-  alert('Hvala na poruci! 💌 Uskoro ću vam se javiti.');
-});
-</script>
+
+    <script>
+        document.querySelector('.contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Hvala na poruci! 💌 Uskoro ću vam se javiti.');
+        });
+    </script>
 </body>
 </html>
