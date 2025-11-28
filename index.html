@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
     <style>
+        /* --- OSNOVNI STILOVI --- */
         body {
             font-family: 'Open Sans', sans-serif;
             background-color: #FEBA52;
@@ -28,6 +29,7 @@
             font-family: 'Playfair Display', serif;
             font-weight: 600;
             color: #632223;
+            margin: 0;
         }
 
         h2 {
@@ -35,6 +37,7 @@
             font-weight: 400;
             color: #923C27;
             text-align: center;
+            margin: 0.5rem 0;
         }
 
         p {
@@ -44,9 +47,11 @@
             text-align: center;
         }
 
+        /* --- SEKCIJE --- */
         section {
             background-color: #FEBA52;
             padding: 3rem 1rem;
+            position: relative; /* za pozicioniranje unutar sekcija */
         }
 
         footer {
@@ -57,8 +62,8 @@
             font-size: 1.1rem;
         }
 
+        /* --- WELCOME --- */
         .welcome {
-            background-color: #FEBA52;
             text-align: center;
             padding: 1.5rem;
             font-size: 1.2rem;
@@ -70,25 +75,37 @@
             color: #8D2831;
         }
 
-        .profil {
-            text-align: center;
-            background-color: #FEBA52;
-            padding: 2rem;
+        /* --- PROFIL --- */
+/* --- PROFIL --- */
+.profil {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centriranje horizontalno */
+    justify-content: center;
+    padding: 2rem;
+}
+
+.profil img {
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    border: 6px solid #E7993A;
+    box-shadow: 0 0 15px rgba(99, 34, 35, 0.4);
+    margin-bottom: 1.5rem;
         }
 
-        .profil img {
-            width: 300px;
-            height: auto;
-            border-radius: 15px;
-            border: 6px solid #E7993A;
-            box-shadow: 0 0 15px rgba(99, 34, 35, 0.4);
-            margin-bottom: 1.5rem;
+        .profil p {
+            vertical-align: middle;
+            display: inline-block;
+            max-width: 600px;
         }
 
+        /* --- VJEŠTINE --- */
         .skills {
             background-color: #E7993A;
             padding: 2rem;
             margin: 2rem 0;
+            overflow: hidden;
         }
 
         .skills ul {
@@ -107,15 +124,21 @@
             color: #632223;
         }
 
-        .interests {
-            background-color: #FEBA52;
+        /* --- ARTWORK --- */
+        .artwork {
             text-align: center;
-            padding: 2rem;
         }
 
+        .artwork img {
+            width: 350px;
+            height: auto;
+            border-radius: 10px;
+            border: 5px solid #E7993A;
+            box-shadow: 0 0 15px rgba(99, 34, 35, 0.4);
+        }
+
+        /* --- GALERIJA --- */
         .gallery {
-            background-color: #E7993A;
-            padding: 3rem 1rem;
             text-align: center;
         }
 
@@ -127,26 +150,12 @@
             margin: 10px;
             border: 5px solid #FEBA52;
             box-shadow: 0 0 10px rgba(99, 34, 35, 0.3);
+            display: inline-block;
+            vertical-align: top;
         }
 
-        .artwork {
-            background-color: #FEBA52;
-            text-align: center;
-            padding: 3rem 1rem;
-        }
-
-        .artwork img {
-            width: 350px;
-            height: auto;
-            border-radius: 10px;
-            border: 5px solid #E7993A;
-            box-shadow: 0 0 15px rgba(99, 34, 35, 0.4);
-        }
-
-        /* --- LJEPŠA TABLICA S HOVER EFEKTIMA --- */
+        /* --- TABLICA --- */
         .table-section {
-            padding: 3rem 1rem;
-            background-color: #FEBA52;
             text-align: center;
         }
 
@@ -160,7 +169,6 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 0 15px rgba(99, 34, 35, 0.3);
-            animation: fadeIn 0.8s ease;
         }
 
         th {
@@ -188,12 +196,7 @@
             transition: 0.25s ease-in-out;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Kontakt forma */
+        /* --- KONTAKT --- */
         .contact-form {
             background-color: #FEBA52;
             border: 3px solid #632223;
@@ -251,14 +254,31 @@
             color: #FEBA52;
         }
 
-        .faculty-logo img {
-            width: 150px;
-            height: auto;
-            margin-top: 20px;
+        /* --- FACULTY LOGO --- */
+.faculty-logo {
+    display: flex;
+    justify-content: center; /* centriranje horizontalno */
+    margin-top: 20px;
+}
+
+.faculty-logo img {
+    width: 150px;
+    height: auto;
+}
+
+        /* --- SELEKTORI PO ATRIBUTU --- */
+        img[alt="Digitalni rad"] {
+            border-color: #632223;
         }
+
+        /* --- ANIMACIJE --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
     </style>
 </head>
-
 <body>
     <header>
         <h1>Marija Šinković</h1>
@@ -312,7 +332,6 @@
         <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0" alt="Grad">
     </section>
 
-    <!-- NOVA TABLICA -->
     <section class="table-section">
         <h2>Moji projekti 📊</h2>
         <table>
@@ -321,19 +340,16 @@
                 <th>Godina</th>
                 <th>Vrsta rada</th>
             </tr>
-
             <tr>
                 <td>Digitalna ilustracija</td>
                 <td>2024.</td>
                 <td>Grafički dizajn</td>
             </tr>
-
             <tr>
                 <td>Vektorska tipografija</td>
                 <td>2025.</td>
                 <td>Tipografski rad</td>
             </tr>
-
             <tr>
                 <td>LUMINA SKIN video sadržaj</td>
                 <td>2025.</td>
@@ -391,3 +407,4 @@
     </script>
 </body>
 </html>
+
