@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marija Šinković – Osobna stranica</title>
+    <title>Marija Šinković – Digitalni Portfolio</title>
 
     <!-- Google fontovi -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
             font-weight: 400;
             color: #923C27;
             text-align: center;
-            margin: 0.5rem 0;
+            margin: 1rem 0;
         }
 
         p {
@@ -47,11 +47,10 @@
             text-align: center;
         }
 
-        /* --- SEKCIJE --- */
         section {
             background-color: #FEBA52;
             padding: 3rem 1rem;
-            position: relative; /* za pozicioniranje unutar sekcija */
+            position: relative;
         }
 
         footer {
@@ -76,28 +75,21 @@
         }
 
         /* --- PROFIL --- */
-/* --- PROFIL --- */
-.profil {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* centriranje horizontalno */
-    justify-content: center;
-    padding: 2rem;
-}
-
-.profil img {
-    width: 300px;
-    height: auto;
-    border-radius: 15px;
-    border: 6px solid #E7993A;
-    box-shadow: 0 0 15px rgba(99, 34, 35, 0.4);
-    margin-bottom: 1.5rem;
+        .profil {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
         }
 
-        .profil p {
-            vertical-align: middle;
-            display: inline-block;
-            max-width: 600px;
+        .profil img {
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            border: 6px solid #E7993A;
+            box-shadow: 0 0 15px rgba(99, 34, 35, 0.4);
+            margin-bottom: 1.5rem;
         }
 
         /* --- VJEŠTINE --- */
@@ -105,7 +97,10 @@
             background-color: #E7993A;
             padding: 2rem;
             margin: 2rem 0;
-            overflow: hidden;
+        }
+
+        .skills h2 {
+            text-align: center;
         }
 
         .skills ul {
@@ -126,7 +121,9 @@
 
         /* --- ARTWORK --- */
         .artwork {
+            background-color: #FEBA52;
             text-align: center;
+            padding: 3rem 1rem;
         }
 
         .artwork img {
@@ -139,6 +136,8 @@
 
         /* --- GALERIJA --- */
         .gallery {
+            background-color: #E7993A;
+            padding: 3rem 1rem;
             text-align: center;
         }
 
@@ -150,12 +149,12 @@
             margin: 10px;
             border: 5px solid #FEBA52;
             box-shadow: 0 0 10px rgba(99, 34, 35, 0.3);
-            display: inline-block;
-            vertical-align: top;
         }
 
         /* --- TABLICA --- */
         .table-section {
+            padding: 3rem 1rem;
+            background-color: #FEBA52;
             text-align: center;
         }
 
@@ -169,6 +168,7 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 0 15px rgba(99, 34, 35, 0.3);
+            animation: fadeIn 0.8s ease;
         }
 
         th {
@@ -196,7 +196,20 @@
             transition: 0.25s ease-in-out;
         }
 
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* --- KONTAKT --- */
+        .contact h2 {
+            text-align: center;
+        }
+
+        .contact p {
+            text-align: center;
+        }
+
         .contact-form {
             background-color: #FEBA52;
             border: 3px solid #632223;
@@ -255,28 +268,62 @@
         }
 
         /* --- FACULTY LOGO --- */
-.faculty-logo {
-    display: flex;
-    justify-content: center; /* centriranje horizontalno */
-    margin-top: 20px;
-}
-
-.faculty-logo img {
-    width: 150px;
-    height: auto;
-}
-
-        /* --- SELEKTORI PO ATRIBUTU --- */
-        img[alt="Digitalni rad"] {
-            border-color: #632223;
+        .faculty-logo {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
         }
 
-        /* --- ANIMACIJE --- */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .faculty-logo img {
+            width: 150px;
+            height: auto;
         }
 
+        /* --- EMBED / IFRAME / MEDIA ELEMENTI --- */
+        .video, .external-site {
+            margin: 2rem auto;
+            text-align: center;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border: 0;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        .external-site a {
+            color: #632223;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .external-site a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- RESPONSIVNOST --- */
+        @media (max-width: 768px) {
+            .gallery img {
+                width: 45%;
+                height: auto;
+            }
+            .artwork img {
+                width: 80%;
+            }
+            table {
+                width: 95%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery img {
+                width: 90%;
+                margin: 5px 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -286,8 +333,8 @@
     </header>
 
     <div class="welcome">
-        🌸 Dobrodošli na moju osobnu web stranicu! 🌞 <br>
-        Ovdje možete saznati više o meni, mojim <span>interesima</span>, <span>vještinama</span> i stvarima koje me <span>inspiriraju</span>. ✨💫
+        🌸 Dobrodošli na moj digitalni portfolio! 🌞 <br>
+        Ovdje možete saznati više o meni, mojim <span>interesima</span>, <span>vještinama</span> i projektima u kojima sudjelujem. ✨💫
     </div>
 
     <section class="profil">
@@ -298,12 +345,10 @@
 
     <section>
         <p>
-            Pozdrav! Ja sam Marija, društvena osoba koja voli kreativnost, ljude i prirodu. 
-            Studiram na Grafičkom fakultetu i volim istraživati sve oblike vizualne komunikacije. 🌿
+            Pozdrav! Ja sam Marija, kreativna osoba koja voli ljude, prirodu i izazove. 🌿
         </p>
         <p>
-            U slobodno vrijeme volontiram u struci, radim u Zara Home dućanu i učim nove dizajnerske alate. 
-            Volim planinarenje, vožnju biciklom, izlaske i druženja — a posebno mačke! 🐾
+            Trenutno studiram na Grafičkom fakultetu u Zagrebu, radim u Zara Home dućanu te volontiram u projektimu "Unstoppable 2024" - ESS. 🐾
         </p>
     </section>
 
@@ -312,7 +357,7 @@
         <ul>
             <li><strong>Grafički dizajn</strong> – Adobe Illustrator & Photoshop</li>
             <li><strong>Tipografija</strong> – kreativne kombinacije pisama</li>
-            <li><strong>Fotografija</strong> – + osnovna obrada</li>
+            <li><strong>Fotografija</strong> – osnovna obrada</li>
             <li><strong>HTML & CSS</strong> – izrada web stranica</li>
             <li><strong>Dizajn interijera</strong> – iskustvo u Zara Home</li>
         </ul>
@@ -330,6 +375,20 @@
         <img src="https://images.unsplash.com/photo-1503264116251-35a269479413" alt="Refleksije">
         <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Šetnja">
         <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0" alt="Grad">
+    </section>
+
+    <!-- Sekcija Učimo učiti -->
+    <section class="external-site">
+        <h2>Projekt "Učimo učiti" 📖</h2>
+        <p>2017. godine sam sudjelovala u stvaranju knjige "A je li netko pitao učenike?", koja je nastala u sklopu programa "Učimo učiti". Ova knjiga je poseban priručnik o učenju jer smo ga u potpunosti napisali i ilustrirali mi, učenici. Podijelili smo svoja iskustva učenja za druge učenike i odrasle.</p>
+        <a href="https://www.youtube.com/watch?v=cKCoejm6x9Y" target="_blank">Pogledajte video</a>
+    </section>
+
+    <!-- Sekcija ESS volontiranje -->
+    <section class="external-site">
+        <h2>Volontiranje preko ESS 🌍</h2>
+        <p>Radim na projektu stvaranja video životopisa (Digital CV) za srednjoškolce s posebnim potrebama. Cilj je predstaviti njihove kvalitete kroz video kako bi se lakše zaposlili u struci.</p>
+        <a href="https://652427bc0708f.site123.me/volunteers-1/marija" target="_blank">Pogledajte web stranicu projekta</a>
     </section>
 
     <section class="table-section">
@@ -396,7 +455,7 @@
 
     <footer>
         <p>&copy; 2025 Marija Šinković | Grafički fakultet Zagreb</p>
-        <p>Hvala što ste posjetili moju web stranicu! 💛</p>
+        <p>Hvala što ste posjetili moj portfolio! 💛</p>
     </footer>
 
     <script>
@@ -407,4 +466,3 @@
     </script>
 </body>
 </html>
-
