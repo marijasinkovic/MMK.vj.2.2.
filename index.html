@@ -1,468 +1,196 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marija Šinković – Digitalni Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marija Šinković – Digitalni Portfolio</title>
 
-    <!-- Google fontovi -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-    <style>
-        /* --- OSNOVNI STILOVI --- */
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #FEBA52;
-            color: #632223;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+<style>
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FEBA52;
+    color: #632223;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    text-align: center;
+}
+header {
+    background-color: #E7993A;
+    text-align: center;
+    padding: 2rem;
+}
+h1 { font-family: 'Playfair Display', serif; font-weight: 600; color: #632223; margin: 0; }
+h2 { font-family: 'Playfair Display', serif; font-weight: 400; color: #923C27; margin: 1rem 0; }
+p { color: #8D2831; max-width: 700px; margin: 0 auto 1rem auto; }
 
-        header {
-            background-color: #E7993A;
-            text-align: center;
-            padding: 2rem;
-        }
+section { padding: 3rem 1rem; position: relative; }
 
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            color: #632223;
-            margin: 0;
-        }
+.welcome { padding: 1.5rem; font-size: 1.2rem; color: #632223; }
+.welcome span { font-weight: bold; color: #8D2831; }
 
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 400;
-            color: #923C27;
-            text-align: center;
-            margin: 1rem 0;
-        }
+.profil img { width: 300px; height: auto; border-radius: 15px; border: 6px solid #E7993A; box-shadow: 0 0 15px rgba(99, 34, 35, 0.4); margin-bottom: 1.5rem; }
 
-        p {
-            color: #8D2831;
-            max-width: 700px;
-            margin: 0 auto 1rem auto;
-            text-align: center;
-        }
+.skills { background-color: #E7993A; padding: 2rem; margin: 2rem 0; }
+.skills ul { list-style: square; padding: 0; margin: 0 auto; max-width: 600px; text-align: center; }
+.skills li { margin: 0.5rem 0; }
+.skills li strong { color: #632223; }
 
-        section {
-            background-color: #FEBA52;
-            padding: 3rem 1rem;
-            position: relative;
-        }
+.artwork-section img, .gallery img { margin: 1rem auto; display: block; cursor: pointer; }
+.gallery { background-color: #E7993A; padding: 3rem 1rem; }
+.gallery img { width: 250px; height: 250px; object-fit: cover; border-radius: 20px; border: 5px solid #FEBA52; box-shadow: 0 0 10px rgba(99, 34, 35, 0.3); margin: 10px auto; display: block; }
 
-        footer {
-            background-color: #923C27;
-            color: #FEBA52;
-            text-align: center;
-            padding: 2rem;
-            font-size: 1.1rem;
-        }
+table { width: 85%; margin: 0 auto; border-collapse: separate; border-spacing: 0; background: linear-gradient(180deg, #FFE4B5, #FDD38F); border: 4px solid #923C27; border-radius: 15px; overflow: hidden; box-shadow: 0 0 15px rgba(99, 34, 35, 0.3); animation: fadeIn 0.8s ease; }
+th, td { padding: 15px; color: #632223; font-size: 1rem; }
+th { background-color: #E7993A; color: #FEBA52; font-weight: 600; font-size: 1.1rem; }
+tr:last-child td { border-bottom: none; }
+tr:hover { background-color: #F6C25B; cursor: pointer; transition: 0.25s ease-in-out; }
 
-        /* --- WELCOME --- */
-        .welcome {
-            text-align: center;
-            padding: 1.5rem;
-            font-size: 1.2rem;
-            color: #632223;
-        }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        .welcome span {
-            font-weight: bold;
-            color: #8D2831;
-        }
+.media-container embed, .media-container iframe, .media-container video, .media-container audio, .media-container picture img {
+    display: block;
+    margin: 1rem auto;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(99, 34, 35, 0.4);
+}
+.media-container embed { height: 500px; border: 3px solid #632223; }
+.media-container iframe { width: 100%; height: 500px; border: 3px solid #632223; }
 
-        /* --- PROFIL --- */
-        .profil {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
+.homework-submission button { background-color: #923C27; color: #FEBA52; border: none; padding: 12px 25px; font-size: 1.1rem; border-radius: 8px; cursor: pointer; transition: 0.3s; margin-top: 15px; }
+.homework-submission button:hover { background-color: #632223; }
 
-        .profil img {
-            width: 300px;
-            height: auto;
-            border-radius: 15px;
-            border: 6px solid #E7993A;
-            box-shadow: 0 0 15px rgba(99, 34, 35, 0.4);
-            margin-bottom: 1.5rem;
-        }
-
-        /* --- VJEŠTINE --- */
-        .skills {
-            background-color: #E7993A;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .skills h2 {
-            text-align: center;
-        }
-
-        .skills ul {
-            list-style: square;
-            text-align: left;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0;
-        }
-
-        .skills li {
-            margin: 0.5rem 0;
-        }
-
-        .skills li strong {
-            color: #632223;
-        }
-
-        /* --- ARTWORK --- */
-        .artwork {
-            background-color: #FEBA52;
-            text-align: center;
-            padding: 3rem 1rem;
-        }
-
-        .artwork img {
-            width: 350px;
-            height: auto;
-            border-radius: 10px;
-            border: 5px solid #E7993A;
-            box-shadow: 0 0 15px rgba(99, 34, 35, 0.4);
-        }
-
-        /* --- GALERIJA --- */
-        .gallery {
-            background-color: #E7993A;
-            padding: 3rem 1rem;
-            text-align: center;
-        }
-
-        .gallery img {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 20px;
-            margin: 10px;
-            border: 5px solid #FEBA52;
-            box-shadow: 0 0 10px rgba(99, 34, 35, 0.3);
-        }
-
-        /* --- TABLICA --- */
-        .table-section {
-            padding: 3rem 1rem;
-            background-color: #FEBA52;
-            text-align: center;
-        }
-
-        table {
-            width: 85%;
-            margin: 0 auto;
-            border-collapse: separate;
-            border-spacing: 0;
-            background: linear-gradient(180deg, #FFE4B5, #FDD38F);
-            border: 4px solid #923C27;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 0 15px rgba(99, 34, 35, 0.3);
-            animation: fadeIn 0.8s ease;
-        }
-
-        th {
-            background-color: #E7993A;
-            color: #FEBA52;
-            padding: 15px;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        td {
-            padding: 15px;
-            color: #632223;
-            font-size: 1rem;
-            border-bottom: 2px solid #F2BF7C;
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        tr:hover {
-            background-color: #F6C25B;
-            cursor: pointer;
-            transition: 0.25s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- KONTAKT --- */
-        .contact h2 {
-            text-align: center;
-        }
-
-        .contact p {
-            text-align: center;
-        }
-
-        .contact-form {
-            background-color: #FEBA52;
-            border: 3px solid #632223;
-            border-radius: 15px;
-            padding: 20px;
-            max-width: 500px;
-            margin: 2rem auto;
-            box-shadow: 0 0 10px rgba(99, 34, 35, 0.3);
-        }
-
-        .contact-form fieldset {
-            border: 2px solid #923C27;
-            border-radius: 10px;
-            padding: 15px;
-        }
-
-        .contact-form legend {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            color: #632223;
-            padding: 0 10px;
-        }
-
-        .contact-form label {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
-            color: #632223;
-        }
-
-        .contact-form input,
-        .contact-form select,
-        .contact-form textarea,
-        .contact-form button {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border-radius: 8px;
-            border: 1px solid #8D2831;
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        .contact-form button {
-            background-color: #E7993A;
-            color: #632223;
-            border: none;
-            font-weight: bold;
-            margin-top: 15px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .contact-form button:hover {
-            background-color: #8D2831;
-            color: #FEBA52;
-        }
-
-        /* --- FACULTY LOGO --- */
-        .faculty-logo {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .faculty-logo img {
-            width: 150px;
-            height: auto;
-        }
-
-        /* --- EMBED / IFRAME / MEDIA ELEMENTI --- */
-        .video, .external-site {
-            margin: 2rem auto;
-            text-align: center;
-        }
-
-        iframe {
-            width: 100%;
-            max-width: 560px;
-            height: 315px;
-            border: 0;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-        }
-
-        .external-site a {
-            color: #632223;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .external-site a:hover {
-            text-decoration: underline;
-        }
-
-        /* --- RESPONSIVNOST --- */
-        @media (max-width: 768px) {
-            .gallery img {
-                width: 45%;
-                height: auto;
-            }
-            .artwork img {
-                width: 80%;
-            }
-            table {
-                width: 95%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .gallery img {
-                width: 90%;
-                margin: 5px 0;
-            }
-        }
-    </style>
+@media (max-width: 768px) {
+    table { width: 95%; }
+    .gallery img { width: 45%; }
+    .artwork-section img { width: 80%; }
+}
+@media (max-width: 480px) {
+    .gallery img { width: 90%; margin: 5px auto; }
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Marija Šinković</h1>
-        <h2>Studentica Grafičkog fakulteta u Zagrebu</h2>
-    </header>
+<header>
+    <h1>Marija Šinković</h1>
+    <h2>Studentica Grafičkog fakulteta u Zagrebu</h2>
+</header>
 
-    <div class="welcome">
-        🌸 Dobrodošli na moj digitalni portfolio! 🌞 <br>
-        Ovdje možete saznati više o meni, mojim <span>interesima</span>, <span>vještinama</span> i projektima u kojima sudjelujem. ✨💫
+<div class="welcome">
+🌸 Dobrodošli na moj digitalni portfolio! 🌞 <br>
+Ovdje možete saznati više o meni, mojim <span>interesima</span>, <span>vještinama</span> i projektima u kojima sudjelujem. ✨💫
+</div>
+
+<section class="profil">
+    <img src="jaihel.JPG" alt="Marija i Jaihel">
+    <p><em>Ovo je slika mene i moje najbolje prijateljice. 💕</em></p>
+    <p>"Dizajn nije samo ono što vidiš – to je osjećaj koji prenosiš." 🎨</p>
+</section>
+
+<section>
+    <p>Pozdrav! Ja sam Marija, kreativna osoba koja voli ljude, prirodu i izazove. 🌿</p>
+    <p>Trenutno studiram na Grafičkom fakultetu u Zagrebu, radim u Zara Home dućanu te volontiram u projektima "Unstoppable 2023/2024" - ESS. 🐾</p>
+</section>
+
+<section class="skills">
+    <h2>Moje vještine 💻</h2>
+    <ul>
+        <li><strong>Grafički dizajn</strong> – Adobe Illustrator & Photoshop</li>
+        <li><strong>Tipografija</strong> – kreativne kombinacije pisama</li>
+        <li><strong>Fotografija</strong> – osnovna obrada</li>
+        <li><strong>HTML & CSS</strong> – izrada web stranica</li>
+        <li><strong>Dizajn interijera</strong> – iskustvo u Zara Home</li>
+    </ul>
+</section>
+
+<section class="media-demo-section">
+    <h2>Projekt "Učimo učiti" 📖</h2>
+    <p>2017. godine sam sudjelovala u projektu <strong>Učimo učiti</strong>. Zajedno s vršnjacima napisala i ilustrirala sam knjigu koja pomaže učenicima i odraslima u učenju.</p>
+    
+    <div class="media-container">
+        <p><strong>Kliknite na thumbnail da pogledate video:</strong></p>
+        <a href="https://www.youtube.com/watch?v=cKCoejm6x9Y" target="_blank">
+            <img src="https://img.youtube.com/vi/cKCoejm6x9Y/maxresdefault.jpg" 
+                 alt="Video - Učimo učiti" 
+                 style="width:100%; max-width:700px; border-radius:10px; box-shadow:0 0 15px rgba(99,34,35,0.4); cursor:pointer;">
+        </a>
+        <p style="font-style:italic;">Kliknite na sliku da otvorite YouTube video o projektu "Učimo učiti".</p>
     </div>
+</section>
 
-    <section class="profil">
-        <img src="jaihel.JPG" alt="Marija i Jaihel">
-        <p><em>Ovo je slika mene i moje najbolje prijateljice. 💕</em></p>
-        <p>"Dizajn nije samo ono što vidiš – to je osjećaj koji prenosiš." 🎨</p>
-    </section>
+<section class="external-site">
+    <h2>Volontiranje preko ESS 🌍</h2>
+    <p>Volontiram u projektu <strong>Unstoppable 2023</strong> – stvaramo digitalne video životopise za srednjoškolce s posebnim potrebama kako bi lakše predstavili svoje kvalitete.</p>
+    
+    <div class="media-container">
+        <iframe src="https://652427bc0708f.site123.me/volunteers-1/marija" title="Volontiranje ESS" allowfullscreen></iframe>
+        <p>Kratki opis: Web stranica projekta na kojem volontiram.</p>
+    </div>
+</section>
 
-    <section>
-        <p>
-            Pozdrav! Ja sam Marija, kreativna osoba koja voli ljude, prirodu i izazove. 🌿
-        </p>
-        <p>
-            Trenutno studiram na Grafičkom fakultetu u Zagrebu, radim u Zara Home dućanu te volontiram u projektimu "Unstoppable 2024" - ESS. 🐾
-        </p>
-    </section>
+<section class="artwork-section">
+    <h2>LUMINA SKIN Kampanja 💄</h2>
+    <p>Nastanak kampanje Lumina Skin pomoću različitih digitalnih alata. Klikom na sliku otvara se stranica <strong>Lumen5</strong> za daljnju izradu multimedijalnog sadržaja.</p>
+    <div class="media-container">
+        <a href="https://lumen5.com/" target="_blank">
+            <img src="pr1.png" alt="Lumina Skin Kampanja" style="width:100%; max-width:400px; border-radius:10px; box-shadow:0 0 15px rgba(99,34,35,0.4);">
+        </a>
+        <p style="font-style:italic;">Pritisnite na sliku da otvorite Lumen5 platformu.</p>
+    </div>
+</section>
 
-    <section class="skills">
-        <h2>Moje vještine 💻</h2>
-        <ul>
-            <li><strong>Grafički dizajn</strong> – Adobe Illustrator & Photoshop</li>
-            <li><strong>Tipografija</strong> – kreativne kombinacije pisama</li>
-            <li><strong>Fotografija</strong> – osnovna obrada</li>
-            <li><strong>HTML & CSS</strong> – izrada web stranica</li>
-            <li><strong>Dizajn interijera</strong> – iskustvo u Zara Home</li>
-        </ul>
-    </section>
+<section class="gallery">
+    <h2>Galerija inspiracija 📷</h2>
+    <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e" alt="Ulica noću">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Priroda u magli">
+    <img src="https://images.unsplash.com/photo-1503264116251-35a269479413" alt="Refleksije">
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Šetnja">
+    <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0" alt="Grad">
+</section>
 
-    <section class="artwork">
-        <h2>Moj digitalni rad 🎨</h2>
-        <img src="pr1.png" alt="Digitalni rad">
-    </section>
+<section class="homework-submission">
+    <h2>Seminarski rad – Lumina Skin Kampanja 📝</h2>
+    <div class="media-container">
+        <embed src="file:///C:/Users/Marija/Desktop/MMK/Informatika_LUMINA_SKIN.pdf" type="application/pdf">
+        <p>Kratki opis: Moj seminarski rad prikazuje plan i vizualne materijale za Lumina Skin kampanju.</p>
+    </div>
+    <button onclick="alert('Rješenje zadaće uspješno preuzeto! (Simulacija)');">
+        Preuzmi Seminarski Rad ⬇️
+    </button>
+</section>
 
-    <section class="gallery">
-        <h2>Galerija inspiracija 📷</h2>
-        <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e" alt="Ulica noću">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Priroda u magli">
-        <img src="https://images.unsplash.com/photo-1503264116251-35a269479413" alt="Refleksije">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Šetnja">
-        <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0" alt="Grad">
-    </section>
+<section class="table-section">
+    <h2>Moji projekti 📊</h2>
+    <table>
+        <tr>
+            <th>Projekt</th>
+            <th>Godina</th>
+            <th>Vrsta rada</th>
+        </tr>
+        <tr>
+            <td>Digitalna ilustracija</td>
+            <td>2024.</td>
+            <td>Grafički dizajn</td>
+        </tr>
+        <tr>
+            <td>Vektorska tipografija</td>
+            <td>2025.</td>
+            <td>Tipografski rad</td>
+        </tr>
+        <tr>
+            <td>LUMINA SKIN video sadržaj</td>
+            <td>2025.</td>
+            <td>Multimedija</td>
+        </tr>
+    </table>
+</section>
 
-    <!-- Sekcija Učimo učiti -->
-    <section class="external-site">
-        <h2>Projekt "Učimo učiti" 📖</h2>
-        <p>2017. godine sam sudjelovala u stvaranju knjige "A je li netko pitao učenike?", koja je nastala u sklopu programa "Učimo učiti". Ova knjiga je poseban priručnik o učenju jer smo ga u potpunosti napisali i ilustrirali mi, učenici. Podijelili smo svoja iskustva učenja za druge učenike i odrasle.</p>
-        <a href="https://www.youtube.com/watch?v=cKCoejm6x9Y" target="_blank">Pogledajte video</a>
-    </section>
-
-    <!-- Sekcija ESS volontiranje -->
-    <section class="external-site">
-        <h2>Volontiranje preko ESS 🌍</h2>
-        <p>Radim na projektu stvaranja video životopisa (Digital CV) za srednjoškolce s posebnim potrebama. Cilj je predstaviti njihove kvalitete kroz video kako bi se lakše zaposlili u struci.</p>
-        <a href="https://652427bc0708f.site123.me/volunteers-1/marija" target="_blank">Pogledajte web stranicu projekta</a>
-    </section>
-
-    <section class="table-section">
-        <h2>Moji projekti 📊</h2>
-        <table>
-            <tr>
-                <th>Projekt</th>
-                <th>Godina</th>
-                <th>Vrsta rada</th>
-            </tr>
-            <tr>
-                <td>Digitalna ilustracija</td>
-                <td>2024.</td>
-                <td>Grafički dizajn</td>
-            </tr>
-            <tr>
-                <td>Vektorska tipografija</td>
-                <td>2025.</td>
-                <td>Tipografski rad</td>
-            </tr>
-            <tr>
-                <td>LUMINA SKIN video sadržaj</td>
-                <td>2025.</td>
-                <td>Multimedija</td>
-            </tr>
-        </table>
-    </section>
-
-    <section class="contact">
-        <h2>Kontakt 📬</h2>
-        <p>📧 Email: <strong>marija.sinkovic16@gmail.com</strong></p>
-        <p>📱 Instagram: <em>@marija.sinkovic</em></p>
-        <p>📍 Zagreb, Hrvatska</p>
-
-        <form action="#" method="post" class="contact-form">
-            <fieldset>
-                <legend>Pošaljite mi poruku 💌</legend>
-
-                <label for="ime">Ime i prezime:</label>
-                <input type="text" id="ime" name="ime" required>
-
-                <label for="email">E-mail adresa:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="tema">Tema poruke:</label>
-                <select id="tema" name="tema">
-                    <option value="pohvala">Pohvala</option>
-                    <option value="pitanje">Pitanje</option>
-                    <option value="suradnja">Suradnja</option>
-                    <option value="ostalo">Ostalo</option>
-                </select>
-
-                <label for="poruka">Vaša poruka:</label>
-                <textarea id="poruka" name="poruka" rows="5"></textarea>
-
-                <button type="submit">Pošalji ✉️</button>
-            </fieldset>
-        </form>
-
-        <div class="faculty-logo">
-            <img src="grflogo.png" alt="Logo Grafičkog fakulteta">
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Marija Šinković | Grafički fakultet Zagreb</p>
-        <p>Hvala što ste posjetili moj portfolio! 💛</p>
-    </footer>
-
-    <script>
-        document.querySelector('.contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Hvala na poruci! 💌 Uskoro ću vam se javiti.');
-        });
-    </script>
+<footer>
+    <p>&copy; 2025 Marija Šinković | Grafički fakultet Zagreb</p>
+    <p>Hvala što ste posjetili moj portfolio! 💛</p>
+</footer>
 </body>
 </html>
