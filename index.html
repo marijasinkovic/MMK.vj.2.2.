@@ -248,7 +248,36 @@ section ~ footer {
         opacity: 1;
     }
 }
+.profil {
+    perspective: 800px;
+}
 
+.profil img {
+    transform-style: preserve-3d;
+}
+
+.profil img:hover {
+    transform: rotateY(12deg) rotateX(6deg) scale(1.05);
+}
+
+/* 10. 3D flip efekt – gumbi */
+button {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+button:hover {
+    transform: rotateX(15deg) scale(1.05);
+}
+
+/* 11. Galerija – blagi 3D nagib */
+.gallery {
+    perspective: 1000px;
+}
+
+.gallery img:hover {
+    transform: rotateY(-10deg) rotateX(5deg) scale(1.05);
+}
 </style>
 </head>
 <body>
